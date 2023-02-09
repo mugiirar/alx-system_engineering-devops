@@ -1,2 +1,2 @@
 #!/bin/bash
-mplay StarWars IV 
+mplayer StarWar IV 
