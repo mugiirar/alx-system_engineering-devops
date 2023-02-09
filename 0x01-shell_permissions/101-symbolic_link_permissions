@@ -1,0 +1,3 @@
+#!/bin/bash
+chown vincent __hello
+chgrp staff __link
