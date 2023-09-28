@@ -7,8 +7,8 @@ do
 	then
 		echo "Best School"
 	else
+		echo "Best School"
 		echo "Hi"
 	fi
-
 	p=$((p+1))
 done
