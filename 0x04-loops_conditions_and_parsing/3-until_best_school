@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Using until to write 10 times
+
+count=0
+until [ $count -gt 9 ]
+do
+	echo "Best School"
+	((count++))
+done
