@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # the fizzbuzz task
-count=0
+count=1
 while [ $count -lt 101 ]
 do
 	fizz=$((count % 3))
