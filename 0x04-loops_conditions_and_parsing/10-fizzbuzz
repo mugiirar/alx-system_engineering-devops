@@ -6,7 +6,10 @@ do
 	fizz=$((count % 3))
 	buzz=$((count % 5))
 
-	if [ $fizz -lt 1 ]
+	if [ $fizz -lt 1 ] && [ $buzz -lt 1 ]
+        then
+                echo "FizzBuzz"
+	elif [ $fizz -lt 1 ]
 	then
 		echo "Fizz"
 	elif [ $buzz -lt 1 ]
