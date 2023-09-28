@@ -9,5 +9,6 @@ do
 	else
 		echo "Hi"
 	fi
+
 	p=$((p+1))
 done
