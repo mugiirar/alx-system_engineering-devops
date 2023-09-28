@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# files in the current directory
+themfiles=$(ls)
+for item in $themfiles;
+do
+	echo "$item" | cut -d '-' -f2
+done
