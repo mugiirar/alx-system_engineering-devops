@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#displays Best School 10 times, but for the 9th iteration
+p=0
+while [ $p -lt 10 ]
+do
+	if [ $p -ne 8 ]
+	then
+		echo "Best School"
+	else
+		echo "Hi"
+	fi
+	p=$((p+1))
+done
