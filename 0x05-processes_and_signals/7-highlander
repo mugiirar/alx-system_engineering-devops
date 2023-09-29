@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# signal termination
+trap "echo I am invincible!!!" SIGTERM
+
+count=3
+while [ $count -gt 0 ]
+do
+	echo "To infinity and beyond"
+	sleep 2
+done;
