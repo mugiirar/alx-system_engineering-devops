@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+file=/tmp/my_process
+count=8
+while [ $count -gt 0 ];
+do
+        echo "I am alive!" >> $file
+        sleep 2
+done
+
