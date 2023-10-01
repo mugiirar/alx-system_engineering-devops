@@ -5,7 +5,7 @@ then
 elif [[ $1 == "start" ]];
 then
 
-        manage_my_process &
+        ./manage_my_process &
         pid=$!
         echo "$pid" > /var/run/my_process.pid
         echo "manage_my_process started"
@@ -18,13 +18,14 @@ then
                 kill $pid
         fi
         rm /var/run/my_process.pid
+	echo "manage_my_process stopped"
 elif [[ $1 == "restart" ]];
 then
         
         pid=$(cat /var/run/my_process.pid)
         kill $pid
         rm /var/run/my_process.pid
-        manage_my_process &
+        ./manage_my_process &
         pid=$!
         echo "$pid" > /var/run/my_process.pid
         echo "manage_my_process restarted"
