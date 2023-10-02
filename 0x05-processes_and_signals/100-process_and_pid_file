@@ -1,0 +1,18 @@
+
+#!/usr/bin/env bash
+# no love
+echo "$$" > /var/run/myscript.pid
+deletion () {
+        rm /var/run/myscript.pid
+        exit
+}
+count=4
+while [ $count -gt 0 ];
+do
+        echo "To infinity and beyond"
+        sleep 2
+        trap 'echo "I hate the kill command" && deletion' SIGTERM
+        trap 'echo "Y U no love me?!"' SIGINT
+        trap 'deletion' SIGQUIT
+done
+
