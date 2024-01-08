@@ -8,4 +8,14 @@ echo "Hello World!" > /usr/share/nginx/html/index.html
 mkdir -p /var/www/html
 echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
 
+rm /etc/nginx/sites-available/default
+my_hostname=$(hostname)
+printf %s "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /etc/nginx/html;
+    index  index.html index.htm;
+    add_header X-Served-By $my_hostname;
+}" > /etc/nginx/sites-available/default
+
 sudo service nginx start
