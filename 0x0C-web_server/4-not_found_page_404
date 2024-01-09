@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#not found page
 apt-get update
 
 apt-get install -y nginx
