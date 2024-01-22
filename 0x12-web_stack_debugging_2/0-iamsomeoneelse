@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# find out the user
+
+pers=$1
+
+sudo -u $pers whoami
