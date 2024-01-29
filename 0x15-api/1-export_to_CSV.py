@@ -1,18 +1,20 @@
 #!/usr/bin/python3
-"""CSV file"""
-import sys
-import requests
+""" Contains a python script that, using the JSONplaceholder API, for a given
+    employee ID, returns information about employees todo list progress """
 import csv
+import requests
+from sys import argv
 
-if __name__ == "__main__":
-    url = "https://jsonplaceholder.typicode.com/"
-    user = requests.get(url + "users/{}".format(sys.argv[1])).json()
-    name = user.get("username")
-    work = requests.get(url + "todos", params={"userId": sys.argv[1]}).json()
 
-    with open("{}.csv".format(sys.argv[1]), "w", newline="") as csvfile:
-        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-        for t in work:
-            user_data = [sys.argv[1], name, t.get("completed"), t.get("title")]
-            writer.writerow(user_data)
-
+if __name__ == '__main__':
+    userId = argv[1]
+    name = requests.get('https://jsonplaceholder.typicode.com/users/{}'
+                        .format(userId)).json()
+    # todo variable = grabs all todos (completed or not) for the user passed in
+    todo = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'
+                        .format(userId)).json()
+    with open("{}.csv".format(userId), 'w') as acsvfile:
+        csvwriter = csv.writer(acsvfile, quoting=csv.QUOTE_ALL)
+        for task in todo:
+            csvwriter.writerow([userId, name.get('username'),
+                                task.get('completed'), task.get('title')])
