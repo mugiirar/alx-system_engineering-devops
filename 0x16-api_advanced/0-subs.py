@@ -1,14 +1,11 @@
 #!/usr/bin/python3
-"""a function that queries the Reddit API
-"""
 
 import requests
-import json
 from sys import argv
+import json
 
 def number_of_subscribers(subreddit):
-    """finds number of subs"""
-    subreddit = argv[1]
+
     url = "http://api.reddit.com/r/{}/about".format(subreddit)
     agent = "API-practice"
 
