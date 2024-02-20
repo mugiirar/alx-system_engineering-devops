@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# reloading gunicorn to save 2 million...haha
+
+pgrep gunicorn | xargs kill -HUP
